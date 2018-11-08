@@ -1,0 +1,16 @@
+<ActionBar class="action-bar">
+    <NavigationButton [nsRouterLink]="['../../away']" android.systemIcon="ic_menu_back"></NavigationButton>
+    <Label class="action-bar-title" [text]="team.fields.team.stringValue"></Label>
+</ActionBar>
+<GridLayout class="away-panel">
+    <StackLayout class="content">
+        <Image class="away-image" [src]="myImageSrc" stretch="aspectFit"></Image>
+        <Label class="title" verticalAlignment="top" [text]="team.fields.team.stringValue"></Label>
+        <StackLayout class="full margins" backgroundColor="rgba(255, 255, 255, .7)">
+            <Label class="info-margins" [text]="'Record: (' + team.fields.wins.stringValue + '-' + team.fields.losses.stringValue + ')'"></Label>
+            <Label class="info-margins" [text]="'Pace: ' + team.fields.pace.stringValue"></Label>
+            <Label class="info-margins" [text]="'Offensive Rating: ' +  team.fields.oRtg.stringValue"></Label>
+            <Label class="info-margins" [text]="'Defensive Rating: ' + team.fields.dRtg.stringValue"></Label>
+        </StackLayout>
+    </StackLayout>
+</GridLayout>

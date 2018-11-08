@@ -1,0 +1,16 @@
+<ActionBar class="action-bar">
+    <Label class="action-bar-title" text="Matchup"></Label>
+</ActionBar>
+
+<GridLayout *ngIf="isVisible" class="page page-content">
+    <StackLayout>
+        <Label class="" verticalAlignment="top" [text]="homeTeam.fields.team.stringValue"></Label>
+        <Label class="" verticalAlignment="top" [text]="awayTeam.fields.team.stringValue"></Label>
+        <Label class="" verticalAlignment="top" [text]="homeScore"></Label>
+        <Label class="" verticalAlignment="top" [text]="awayScore"></Label>
+        <Label class="" verticalAlignment="top" [text]="totalPoints"></Label>
+        <Label class="" verticalAlignment="top" [text]="spread"></Label>
+        <Label class="" verticalAlignment="top" [text]="overUnder"></Label>
+        <Label class="" verticalAlignment="top" [text]="confidenceScore"></Label>
+    </StackLayout>
+</GridLayout>

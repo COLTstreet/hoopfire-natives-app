@@ -1,0 +1,15 @@
+<ActionBar class="action-bar">
+    <Label class="action-bar-title" text="Away Team Selection"></Label>
+</ActionBar>
+
+<GridLayout class="page page-content">
+    <ListView [items]="items" class="list-group">
+        <ng-template let-item="item">
+            <GridLayout class="list-group-item" rows="*" columns="auto, *">
+                <Image row="0" col="0" [src]="getSrc(item.fields.team.stringValue)" class="thumb img-circle"></Image>
+                <Label row="0" col="1" [nsRouterLink]="['../awayTeam', item.fields.rank.stringValue]" (tap)="setAwayTeam(item)"
+                    [text]="item.fields.team.stringValue" class="list-group-item"></Label>
+            </GridLayout>
+        </ng-template>
+    </ListView>
+</GridLayout>
