@@ -1,16 +1,15 @@
-.home-panel {
+#home {
     vertical-align: top;
     font-size: 20;
-    font-family: "Roboto", "Roboto-Light";
+    font-family: "Roboto-Light";
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .margins {
     margin: 30px;
     padding: 30px;
-}
-
-.info-margins {
-    margin: 10px;
 }
 
 .full {
@@ -26,5 +25,5 @@
     text-align: center;
     font-size: 30px;
     margin-top: 50px;
-    font-family: "Rock Salt", "cursive";
+    font-family: "RockSalt-Regular";
 }
