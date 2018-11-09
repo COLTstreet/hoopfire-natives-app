@@ -1,4 +1,4 @@
-.away-panel {
+#away {
     vertical-align: top;
     font-size: 20;
     font-family: "Roboto", "Roboto-Light";
@@ -22,5 +22,11 @@
     text-align: center;
     font-size: 30px;
     margin-top: 50px;
+    margin-bottom: 50px;
     font-family: "Rock Salt", "cursive";
+}
+
+.cardStyle {
+    background-color: rgba(0,0,0, 0.8);
+    color: white;
 }

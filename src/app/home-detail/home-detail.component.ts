@@ -6,6 +6,8 @@ import { registerElement } from 'nativescript-angular/element-registry';
 import { CardView } from 'nativescript-cardview';
 registerElement('CardView', () => CardView);
 
+import * as utilityModule from "tns-core-modules/utils/utils";
+
 @Component({
     selector: "HomeDetail",
     moduleId: module.id,
@@ -33,5 +35,9 @@ export class HomeDetailComponent implements OnInit {
         temp.style.backgroundRepeat = 'no-repeat';
         temp.style.backgroundPosition = 'center';
         temp.style.backgroundSize = 'cover';
+    }
+
+    goToInjuries() {
+        utilityModule.openUrl("https://www.cbssports.com/nba/injuries");
     }
 }

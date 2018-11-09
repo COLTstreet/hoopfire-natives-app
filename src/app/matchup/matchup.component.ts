@@ -56,6 +56,8 @@ export class MatchupComponent implements OnInit  {
     leftWinner: any;
     rightWinner: any;
     loading: any;
+    homeSrc: any;
+    awaySrc: any;
 
     firstHome = true;
     secondHome = false;
@@ -72,7 +74,9 @@ export class MatchupComponent implements OnInit  {
                     this.calculateAverages();
 
                     this.homeTeam = this.data.getHomeTeam();
+                    this.homeSrc = "~/app/images/" + this.homeTeam.fields.team.stringValue + ".png";
                     this.awayTeam = this.data.getAwayTeam();
+                    this.awaySrc = "~/app/images/" + this.awayTeam.fields.team.stringValue + ".png";
 
                     this.calculateOdds();
                     this.isVisible = true;

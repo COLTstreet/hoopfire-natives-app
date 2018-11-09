@@ -2,23 +2,17 @@
     <NavigationButton [nsRouterLink]="['../../home']" android.systemIcon="ic_menu_back"></NavigationButton>
     <Label class="action-bar-title" [text]="team.fields.team.stringValue"></Label>
 </ActionBar>
-<!-- <GridLayout #content id="home">
+<GridLayout #content id="home" class="page page-content">
     <StackLayout class="content">
-        <Label class="title" verticalAlignment="top" [text]="team.fields.team.stringValue"></Label>
-        <StackLayout class="full margins" backgroundColor="rgba(255, 255, 255, .7)">
-            <Label [text]="'Record: (' + team.fields.wins.stringValue + '-' + team.fields.losses.stringValue + ')'"></Label>
-            <Label [text]="'Pace: ' + team.fields.pace.stringValue"></Label>
-            <Label [text]="'Offensive Rating: ' +  team.fields.oRtg.stringValue"></Label>
-            <Label [text]="'Defensive Rating: ' + team.fields.dRtg.stringValue"></Label>
-        </StackLayout>
+        <CardView class="cardStyle" margin="10" radius="10" shadowOffsetHeight="6" shadowRadius="6">
+            <StackLayout class="full margins">
+                <Label class="title" verticalAlignment="top" [text]="team.fields.team.stringValue" textWrap="true"></Label>
+                <Button class="page-icon fa" text="&#xf0fa;" (tap)="goToInjuries()"></Button>
+                <Label [text]="'Record: (' + team.fields.wins.stringValue + '-' + team.fields.losses.stringValue + ')'"></Label>
+                <Label [text]="'Pace: ' + team.fields.pace.stringValue"></Label>
+                <Label [text]="'Offensive Rating: ' +  team.fields.oRtg.stringValue"></Label>
+                <Label [text]="'Defensive Rating: ' + team.fields.dRtg.stringValue"></Label>
+            </StackLayout>
+        </CardView>
     </StackLayout>
-</GridLayout> -->
-<CardView class="cardStyle" margin="10" elevation="40" radius="1">
-    <GridLayout rows="10,30,30,250, auto, auto,10" columns="10,40, *, 30,10">
-        <Image src="~/app/images/Atlanta Hawks.png" stretch="aspectFit" verticalAlignment="stretch" col="1" row="1" rowSpan="2"></Image>
-        <Label class="createdBy text-left" horizontalAlignment="left" [text]="team.fields.team.stringValue" row="1" col="2" textWrap="true"></Label>
-        <Label class="createdOn text-left" horizontalAlignment="left" [text]="team.fields.team.stringValue" row="2" col="2"></Label>
-        <Label horizontalAlignment="left" [text]="team.fields.team.stringValue" colSpan="3" row="4" textWrap="true" col="1"></Label>
-        <Label horizontalAlignment="left" [text]="team.fields.team.stringValue" textWrap="true" col="1" row="5" colSpan="3"></Label>
-    </GridLayout>
-</CardView>
+</GridLayout>

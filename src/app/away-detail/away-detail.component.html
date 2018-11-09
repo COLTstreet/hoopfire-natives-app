@@ -2,15 +2,17 @@
     <NavigationButton [nsRouterLink]="['../../away']" android.systemIcon="ic_menu_back"></NavigationButton>
     <Label class="action-bar-title" [text]="team.fields.team.stringValue"></Label>
 </ActionBar>
-<GridLayout class="away-panel">
+<GridLayout #content id="away" class="page page-content">
     <StackLayout class="content">
-        <Image class="away-image" [src]="myImageSrc" stretch="aspectFit"></Image>
-        <Label class="title" verticalAlignment="top" [text]="team.fields.team.stringValue"></Label>
-        <StackLayout class="full margins" backgroundColor="rgba(255, 255, 255, .7)">
-            <Label [text]="'Record: (' + team.fields.wins.stringValue + '-' + team.fields.losses.stringValue + ')'"></Label>
-            <Label [text]="'Pace: ' + team.fields.pace.stringValue"></Label>
-            <Label [text]="'Offensive Rating: ' +  team.fields.oRtg.stringValue"></Label>
-            <Label [text]="'Defensive Rating: ' + team.fields.dRtg.stringValue"></Label>
-        </StackLayout>
+        <CardView class="cardStyle" margin="10" radius="10" shadowOffsetHeight="6" shadowRadius="6">
+            <StackLayout class="full margins">
+                <Label class="title" verticalAlignment="top" [text]="team.fields.team.stringValue" textWrap="true"></Label>
+                <Button class="page-icon fa" text="&#xf0fa;" (tap)="goToInjuries()"></Button>
+                <Label [text]="'Record: (' + team.fields.wins.stringValue + '-' + team.fields.losses.stringValue + ')'"></Label>
+                <Label [text]="'Pace: ' + team.fields.pace.stringValue"></Label>
+                <Label [text]="'Offensive Rating: ' +  team.fields.oRtg.stringValue"></Label>
+                <Label [text]="'Defensive Rating: ' + team.fields.dRtg.stringValue"></Label>
+            </StackLayout>
+        </CardView>
     </StackLayout>
 </GridLayout>

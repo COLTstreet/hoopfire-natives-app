@@ -1,10 +1,7 @@
 #home {
     vertical-align: top;
     font-size: 20;
-    font-family: "Roboto-Light";
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    font-family: "Roboto Light", "Roboto-Light";
 }
 
 .margins {
@@ -25,5 +22,11 @@
     text-align: center;
     font-size: 30px;
     margin-top: 50px;
-    font-family: "RockSalt-Regular";
+    margin-bottom: 50px;
+    font-family: "Rock Salt", "cursive";
+}
+
+.cardStyle {
+    background-color: rgba(0,0,0, 0.8);
+    color: white;
 }
