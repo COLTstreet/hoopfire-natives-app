@@ -1,11 +1,43 @@
 .cardStyle-top {
-    background-color: rgba(0,0,0, 0.8);
+    background-color: rgba(65, 65, 65, 0.8);
     color: white;
-    height: 45%;
+    height: 35%;
 }
 
 .cardStyle-bottom {
-    background-color: rgba(0,0,0, 0.8);
+    background-color: rgba(65, 65, 65, 0.8);
     color: white;
-    height: 45%;
+    height: 35%;
+}
+
+.cardStyle-middle {
+    background-color: rgba(65, 65, 65, 0.8);
+    color: white;
+    height: 15%;
+}
+
+.card-img {
+    height: 100%;
+    width: 100%;
+}
+
+.card-info {
+    padding-top: 20px;
+}
+
+.third {
+    width: 33%;
+    text-align: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.score {
+    font-size: 50px;
+}
+
+.full-width {
+    width: 100%;
 }

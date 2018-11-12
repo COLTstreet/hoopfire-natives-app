@@ -5,30 +5,32 @@
 <GridLayout *ngIf="isVisible" class="page page-content">
     <StackLayout class="content">
         <CardView class="cardStyle-top" margin="10" radius="10" shadowOffsetHeight="6" shadowRadius="6">
-            <GridLayout columns="60, auto, *" rows="60, auto, *" class="">
-                <Image row="0" col="0" colSpan="2" rowSpan="2" [src]="homeSrc" class="thumb img-circle"></Image>
-                <Label row="2" col="2" class="" verticalAlignment="top" [text]="homeTeam.fields.team.stringValue"></Label>
-                <Label row="3" col="3" class="" verticalAlignment="top" [text]="awayTeam.fields.team.stringValue"></Label>
-                <Label row="4" col="4" class="" verticalAlignment="top" [text]="homeScore"></Label>
-                <Label row="5" col="5" class="" verticalAlignment="top" [text]="awayScore"></Label>
-                <Label row="6" col="6" class="" verticalAlignment="top" [text]="totalPoints"></Label>
-                <Label row="7" col="7" class="" verticalAlignment="top" [text]="spread"></Label>
-                <Label row="8" col="8" class="" verticalAlignment="top" [text]="overUnder"></Label>
-                <Label row="9" col="9" class="" verticalAlignment="top" [text]="confidenceScore"></Label>
-            </GridLayout>
+            <DockLayout class="full-width" stretchLastChild="false">
+                <Image style="width: 50%;" [src]="homeSrc" dock="left" class="card-img"></Image>
+                <Label style="width: 50%;" class="score text-center" dock="right" [text]="homeScore"></Label>
+            </DockLayout>
+        </CardView>
+        <CardView class="cardStyle-middle" margin="10" radius="10" shadowOffsetHeight="6" shadowRadius="6">
+            <StackLayout class="full-width card-info" orientation="horizontal">
+                <DockLayout class="third">
+                    <Label dock="top" text="Spread"></Label>
+                    <Label dock="bottom" [text]="spread"></Label>
+                </DockLayout>
+                <DockLayout class="third">
+                    <Label dock="top" text="Confidence %"></Label>
+                    <Label dock="bottom" [text]="confidenceScore"></Label>
+                </DockLayout>
+                <DockLayout class="third">
+                    <Label dock="top" text="Over/Under"></Label>
+                    <Label [text]="overUnder"></Label>
+                </DockLayout>
+            </StackLayout>
         </CardView>
         <CardView class="cardStyle-bottom" margin="10" radius="10" shadowOffsetHeight="6" shadowRadius="6">
-            <GridLayout columns="60, auto, *" rows="60, auto, *" class="">
-                <Image [src]="awaySrc" class="thumb img-circle"></Image>
-                <Label class="" verticalAlignment="top" [text]="homeTeam.fields.team.stringValue"></Label>
-                <Label class="" verticalAlignment="top" [text]="awayTeam.fields.team.stringValue"></Label>
-                <Label class="" verticalAlignment="top" [text]="homeScore"></Label>
-                <Label class="" verticalAlignment="top" [text]="awayScore"></Label>
-                <Label class="" verticalAlignment="top" [text]="totalPoints"></Label>
-                <Label class="" verticalAlignment="top" [text]="spread"></Label>
-                <Label class="" verticalAlignment="top" [text]="overUnder"></Label>
-                <Label class="" verticalAlignment="top" [text]="confidenceScore"></Label>
-            </GridLayout>
+            <DockLayout class="full-width" stretchLastChild="false">
+                <Label style="width: 50%;" class="score text-center" dock="left" [text]="awayScore"></Label>
+                <Image style="width: 50%;" [src]="awaySrc" dock="right" class="card-img"></Image>
+            </DockLayout>
         </CardView>
     </StackLayout>
 </GridLayout>
