@@ -2,16 +2,29 @@
     <NavigationButton [nsRouterLink]="['../../home']" android.systemIcon="ic_menu_back"></NavigationButton>
     <Label class="action-bar-title" [text]="team.fields.team.stringValue"></Label>
 </ActionBar>
+
 <GridLayout #content id="home" class="page page-content">
     <StackLayout class="content">
         <CardView class="cardStyle" margin="10" radius="10" shadowOffsetHeight="6" shadowRadius="6">
             <StackLayout class="full margins">
+                <Image class="home-image" [src]="myImageSrc"></Image>
                 <Label class="title" verticalAlignment="top" [text]="team.fields.team.stringValue" textWrap="true"></Label>
-                <Button class="page-icon fa" text="&#xf0fa;" (tap)="goToInjuries()"></Button>
-                <Label [text]="'Record: (' + team.fields.wins.stringValue + '-' + team.fields.losses.stringValue + ')'"></Label>
-                <Label [text]="'Pace: ' + team.fields.pace.stringValue"></Label>
-                <Label [text]="'Offensive Rating: ' +  team.fields.oRtg.stringValue"></Label>
-                <Label [text]="'Defensive Rating: ' + team.fields.dRtg.stringValue"></Label>
+                <StackLayout orientation="horizontal">
+                    <Label [text]="'Record: (' + team.fields.wins.stringValue + '-' + team.fields.losses.stringValue + ')'"></Label>
+                    <Button class="page-icon fa" text="&#xf0fa;" (tap)="goToInjuries()"></Button>
+                </StackLayout>
+                <GridLayout rows="*">
+                    <RadCartesianChart row="0">
+                        <CategoricalAxis tkCartesianVerticalAxis></CategoricalAxis>
+                        <LinearAxis tkCartesianHorizontalAxis></LinearAxis>
+                        <BarSeries tkCartesianSeries [items]="categoricalSource" categoryProperty="Name" valueProperty="Pace"
+                            showLabels="true"></BarSeries>
+                        <BarSeries tkCartesianSeries [items]="categoricalSource" categoryProperty="Name" valueProperty="oRtg"
+                            showLabels="true"></BarSeries>
+                        <BarSeries tkCartesianSeries [items]="categoricalSource" categoryProperty="Name" valueProperty="dRtg"
+                            showLabels="true"></BarSeries>
+                    </RadCartesianChart>
+                </GridLayout>
             </StackLayout>
         </CardView>
     </StackLayout>

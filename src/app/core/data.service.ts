@@ -19,6 +19,7 @@ export class DataService {
     private teams: any;
     private homeTeam: any;
     private awayTeam: any;
+    private leagueAverage: any;
 
     getTeam(id: number) {
         console.log("team rank:" + id);
@@ -26,6 +27,16 @@ export class DataService {
 
     setTeams(teams) {
         this.teams = teams;
+        let scope = this;
+        teams.forEach(function(element) {
+            if(element.fields.team.stringValue === "League Average"){
+                scope.leagueAverage = element;
+            }
+        });
+    }
+    
+    getLeagueAverage() {
+        return this.leagueAverage;
     }
 
     getTeams() {

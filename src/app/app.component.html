@@ -1,4 +1,4 @@
-<TabView [(ngModel)]="tabSelectedIndex" androidTabsPosition="bottom" (selectedIndexChanged)="onSelectedIndexChanged($event)">
+<TabView androidTabsPosition="bottom" (selectedIndexChanged)="onSelectedIndexChanged($event)">
     <page-router-outlet *tabItem="{title: 'Home', iconSource: getIconSource('home')}" name="homeTab">
     </page-router-outlet>
 
