@@ -36,22 +36,27 @@ export class HomeDetailComponent implements OnInit {
         this.leagueAverage = this.data.getLeagueAverage();
         this.buildChart();
         this.myImageSrc = "~/app/images/" + this.team.fields.team.stringValue + ".png";
+        let temp = this.page.getViewById("home");
+        temp.style.backgroundImage = this.myImageSrc;
+        temp.style.backgroundRepeat = 'no-repeat';
+        temp.style.backgroundPosition = 'center';
+        temp.style.backgroundSize = 'cover';
     }
 
     buildChart() {
         this.categoricalSource.push({ 
             Name: this.leagueAverage.fields.team.stringValue, 
-            Pace: this.leagueAverage.fields.pace.stringValue, 
-            dRtg: this.leagueAverage.fields.dRtg.stringValue, 
-            oRtg: this.leagueAverage.fields.oRtg.stringValue, 
-            Rank: this.leagueAverage.fields.rank.stringValue
+            Pace: Number(this.leagueAverage.fields.pace.stringValue), 
+            dRtg: Number(this.leagueAverage.fields.dRtg.stringValue), 
+            oRtg: Number(this.leagueAverage.fields.oRtg.stringValue), 
+            Rank: Number(this.leagueAverage.fields.rank.stringValue)
         });
         this.categoricalSource.push({ 
             Name: this.team.fields.team.stringValue, 
-            Pace: this.team.fields.pace.stringValue, 
-            dRtg: this.team.fields.dRtg.stringValue, 
-            oRtg: this.team.fields.oRtg.stringValue, 
-            Rank: this.team.fields.rank.stringValue
+            Pace: Number(this.team.fields.pace.stringValue), 
+            dRtg: Number(this.team.fields.dRtg.stringValue), 
+            oRtg: Number(this.team.fields.oRtg.stringValue), 
+            Rank: Number(this.team.fields.rank.stringValue)
         });
     }
 

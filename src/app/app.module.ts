@@ -5,6 +5,8 @@ import { AppRoutingModule, COMPONENTS } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { CoreModule } from "./core/core.module";
 import { HttpClientModule } from "@angular/common/http";
+import { NativeScriptUIChartModule } from "nativescript-ui-chart/angular";
+
 
 @NgModule({
     bootstrap: [
@@ -14,7 +16,8 @@ import { HttpClientModule } from "@angular/common/http";
         NativeScriptModule,
         AppRoutingModule,
         CoreModule,
-        HttpClientModule
+        HttpClientModule,
+        NativeScriptUIChartModule
     ],
     declarations: [
         AppComponent,
